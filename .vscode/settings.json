@@ -1,0 +1,4 @@
+{
+    "C_Cpp.default.compilerPath": "${workspaceFolder}/SFML-mingw/bin/g++.exe",
+    "C_Cpp.errorSquiggles": "disabled"
+}
