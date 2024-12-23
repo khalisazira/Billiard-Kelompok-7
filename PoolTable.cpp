@@ -6,7 +6,7 @@
 class PoolTable {
 private:
     sf::RectangleShape tableShape;
-    RoundedRectangleShape borderShape; // Use RoundedRectangleShape
+    RoundedRectangleShape borderShape; 
     sf::RectangleShape cushionShape;
     std::vector<sf::CircleShape> pockets;
     float pocketRadius;
@@ -34,29 +34,25 @@ private:
 
 public:
     PoolTable() : pocketRadius(25.0f) {
-        // Load textures
-        if (!borderTexture.loadFromFile("D:/SFML KEL 7 - New/border_texture.jpg")) {
-            // Handle error
+        if (!borderTexture.loadFromFile("D:/SFML KEL 7 - New/bg/border_texture.jpg")) {
         }
-        if (!cushionTexture.loadFromFile("D:/SFML KEL 7 - New/border_texture.jpg")) {
-            // Handle error
+        if (!cushionTexture.loadFromFile("D:/SFML KEL 7 - New/bg/border_texture.jpg")) {
         }
-        if (!tableTexture.loadFromFile("D:/SFML KEL 7 - New/green_texture.jpg")) {
-            // Handle error
+        if (!tableTexture.loadFromFile("D:/SFML KEL 7 - New/bg/border_texture.jpg")) {
         }
 
         tableShape.setSize(sf::Vector2f(TableWidth, TableHeight));
-        tableShape.setTexture(&tableTexture); // Apply texture
-        tableShape.setPosition(TableBorder + OFFSET_X, TableBorder + OFFSET_Y); // Apply offset
+        tableShape.setTexture(&tableTexture); 
+        tableShape.setPosition(TableBorder + OFFSET_X, TableBorder + OFFSET_Y); 
 
         borderShape.setSize(sf::Vector2f(WindowWidth, WindowHeight));
-        borderShape.setTexture(&borderTexture); // Apply texture
-        borderShape.setPosition(OFFSET_X, OFFSET_Y); // Apply offset
-        borderShape.setCornersRadius(20.0f); // Set corner radius
+        borderShape.setTexture(&borderTexture); 
+        borderShape.setPosition(OFFSET_X, OFFSET_Y); 
+        borderShape.setCornersRadius(20.0f); 
 
         cushionShape.setSize(sf::Vector2f(TableWidth + 20, TableHeight + 20));
-        cushionShape.setTexture(&cushionTexture); // Apply texture
-        cushionShape.setPosition(TableBorder - 10 + OFFSET_X, TableBorder - 10 + OFFSET_Y); // Apply offset
+        cushionShape.setTexture(&cushionTexture); 
+        cushionShape.setPosition(TableBorder - 10 + OFFSET_X, TableBorder - 10 + OFFSET_Y);
 
         setupPockets();
     }
